@@ -106,10 +106,17 @@ def load_models():
 
 @app.route('/', methods=['GET'])
 def index():
-    return send_from_directory('.', 'index.html')
+    return send_from_directory('templates', 'index.html')
 
 @app.route('/<path:path>', methods=['GET'])
 def serve_static(path):
+    # If the requested file is an HTML page, look inside templates/
+    if path.endswith('.html'):
+        template_path = os.path.join('templates', path)
+        if os.path.exists(template_path):
+            return send_from_directory('templates', path)
+            
+    # Otherwise check in the root directory (for assets/ etc.)
     if os.path.exists(path):
         return send_from_directory('.', path)
     return jsonify({"error": "File not found"}), 404
