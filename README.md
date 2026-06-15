@@ -98,14 +98,6 @@ NeuralCare is a smart, predictive health-tech system designed to assist hospital
 
 ---
 
-## Screenshots
-*Insert application screenshots here to demonstrate the visual layout.*
-
-### 🖥️ Dashboard View
-![Dashboard Placeholder](assets/img/CMR-Institute-of-Medical-Science--jpeg.webp)
-
----
-
 ## Project Structure
 ```
 NeuralCare/
